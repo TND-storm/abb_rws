@@ -1,0 +1,92 @@
+<!--
+
+    (c) Copyright 2021 ABB
+
+    Any unauthorized use, reproduction, distribution,
+    or disclosure to third parties is strictly forbidden.
+    ABB reserves all rights regarding Intellectual Property Rights
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>RWS Example WebApp</title>
+    <!-- 
+        This example webapp uses some components to read and write RAPID values and I/O signal.
+        Load the provided Example.mod module into your controller and then run the app to test it out.
+    -->
+    <link rel="stylesheet" type="text/css" href="app.css" />
+
+    <!-- include used components -->
+    <script src="fp-components/fp-components-common.js"></script>
+    <script src="fp-components/fp-components-button-a.js"></script>
+    <script src="fp-components/fp-components-popup-a.js"></script>
+    <script src="fp-components/fp-components-menu-a.js"></script>
+    <script src="fp-components/fp-components-digital-a.js"></script>
+    <script src="fp-components/fp-components-switch-a.js"></script>
+    <script src="fp-components/fp-components-input-a.js"></script>
+    <script src="fp-components/fp-components-linechart-a.js"></script>
+    <script src="fp-components/fp-components-dropdown-a.js"></script>
+    <script src="fp-components/fp-components-toggle-a.js"></script>
+
+    <!-- include RWS api -->
+    <script src="rws-api/omnicore-rws.js"></script>
+    <script src="rws-api/omnicore-app.js"></script>
+
+    <!-- include app javascript -->
+    <script src="app.js"></script>
+</head>
+
+
+
+
+<body>
+    <!--- MAIN VIEW -->
+    <div class="content" id="main-view">
+        <p>This is a RAPID value of type number increased and decreased using Button component. The change history of the value will be displayed in the chart.</p>
+        <div class="signal signal-row">
+            <div id="myDecreaseBtn"></div>
+            <div id="outputDiv" class="output"></div>
+            <div id="myIncreaseBtn"></div>
+            <div>
+                <div class="chart" id="chart-default"></div>
+            </div>
+        </div>
+    
+        <p>This dropdown will set the same RAPID value as above.</p>
+        <div class="signal">
+            <div id="myDropdown"></div>
+        </div>
+    
+        <p>This is a RAPID value of type string. Change by using input and clicking save button.</p>
+        <div class="row">
+            <div id="myInput"></div>
+            <div id="mySubmitBtn"></div>
+        </div>
+    
+        <p>This is a RAPID value of type bool. Toggle by clicking on switch button</p>
+        <div class="signal">
+            <div id="mySwitchDiv"></div>
+        </div>
+    </div>
+
+
+    <!--- I/O View -->
+    <div class="content" id="io-view">
+        <p>This is an I/O signal represented using a digital indicator component. Click to toggle.</p>
+        <!--<p class="label">TestSignal</p>-->
+        <div class="signal">
+            <div id="myDigitalDiv"></div>
+        </div>
+        <p>This is an I/O signal which lets you set different values depending on which option is selected.</p>
+        <p class="label">ToggleSignal</p>
+        <div class="signal">
+            <div id="myToggle"></div>
+        </div>
+    </div>
+    <div id="menu-main"></div>
+</body>
+
+</html>
